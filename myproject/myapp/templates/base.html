@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Proyecto</title>
+</head>
+<body>
+    <header>
+        <h1>Mi Proyecto</h1>
+        {% if user.is_authenticated %}
+            <p>Bienvenido, {{ user.first_name }} {{ user.last_name }}</p>
+            <a href="{% url 'logout' %}">Cerrar sesión</a>
+        {% else %}
+            <a href="{% url 'login' %}">Iniciar sesión</a> | <a href="{% url 'registro' %}">Registrarse</a>
+        {% endif %}
+    </header>
+    <hr>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <hr>
+    <footer>
+        <p>Pie de página de Mi Proyecto</p>
+    </footer>
+</body>
+</html>

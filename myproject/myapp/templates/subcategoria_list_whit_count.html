@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Listado de Subcategorías con la cantidad de Productos</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Cantidad de Productos</th>
+        </tr>
+        {% for subcategoria in subcategorias %}
+            <tr>
+                <td>{{ subcategoria.id }}</td>
+                <td>{{ subcategoria.nombre }}</td>
+                <td>{{ subcategoria.descripcion }}</td>
+                <td>{{ subcategoria.producto_set.count }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Listado de Subcategoria</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Categoria</th>
+        </tr>
+        {% for subcategoria in subcategorias %}
+            <tr>
+                <td>{{ subcategoria.id }}</td>
+                <td>{{ subcategoria.nombre }}</td>
+                <td>{{ subcategoria.descripcion }}</td>
+                <td>{{ subcategoria.categoria.nombre }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'crear_subcategoria' %}">Agregar nueva subcategoria</a>
+{% endblock %}

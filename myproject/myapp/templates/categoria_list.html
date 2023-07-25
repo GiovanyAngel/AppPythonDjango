@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Listado de Categorias</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+        </tr>
+        {% for categoria in categorias %}
+            <tr>
+                <td>{{ categoria.id }}</td>
+                <td>{{ categoria.nombre }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'crear_categoria' %}">Agregar nueva categoria</a>
+{% endblock %}
