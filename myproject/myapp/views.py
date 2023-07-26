@@ -5,6 +5,10 @@ from django.contrib import messages
 from .models import Categoria, Subcategoria, Producto
 
 # Create your views here.
+
+def index(request):
+    return render(request, 'base.html')
+
 def registro(request):
     if request.method == 'POST':
         form = RegistroForm(request.POST)
@@ -31,6 +35,9 @@ def login_view(request):
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
+
+def menu_principal(request):
+    return render(request, 'menu_principal.html')
 
 def lista_categorias(request):
     categorias = Categoria.objects.all()

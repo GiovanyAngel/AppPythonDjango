@@ -19,8 +19,10 @@ from django.urls import path
 from .myapp import views
 
 urlpatterns = [
+    path('', views.index, name='base'),
     path('registro/', views.registro, name='registro'),
     path('login/', views.login_view, name='login'),
+    path('menu_principal', views.menu_principal, name='menu_principal'),
     path('categorias/', views.lista_categorias, name='lista_categorias'),
     path('categorias/nueva/', views.crear_categoria, name='crear_categoria'),
     path('categorias/<int:pk>/editar/', views.editar_categoria, name='editar_categoria'),
